@@ -3,16 +3,7 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <div class="row mb-2 ">
-                <div class="col-sm-6">
-                    {{-- <h3 class="m-0">Manajemen User</h3> --}}
-                </div><!-- /.col -->
-            </div>
-            <!-- Page Heading -->
-
-
-
-            <!-- Content Row -->
+            <div class="row mb-2"></div>
             <div class="card">
                 <div class="card-header py-3 d-flex">
                     <h6 class="m-0 font-weight-bold text-primary">
@@ -23,7 +14,7 @@
                     <form action="/service" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="/service" class="form-label">Jenis Pelayanan</label>
+                            <label for="service_text" class="form-label">Jenis Pelayanan</label>
                             <input type="text" id ="service_text" name= "service_text"
                                 class="form-control @error('service_text') is-invalid @enderror" autofocus>
                             @error('service_text')

@@ -22,12 +22,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    {{-- <form action="{{ route('option.store') }}" method="POST"> --}}
                     <form action="/option" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="question">Pertanyaan</label>
-                            <select class="form-select" id="floatingSelectGrid" name="question_id" id="question">
+                            <select class="form-select" name="question_id" id="question">
                                 <option selected>Pilih Pertanyaan</option>
                                 @foreach ($questions as $id => $question)
                                     <option value="{{ $id }}">{{ $question }}</option>
@@ -38,10 +37,10 @@
                             <label for="option_text" class="form-label">Pilihan</label>
                             <input type="text" class="form-control @error('option_text') is-invalid @enderror"
                                 id="option_text" name="option_text">
+                            @error('option_text')
+                                <small class="text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                        @error('option_text')
-                            <small class="text text-danger">{{ $message }}</small>
-                        @enderror
                         <div class="form-group">
                             <label for="points">Poin</label>
                             <input type="number" class="form-control @error('points') is-invalid @enderror" min= "1"

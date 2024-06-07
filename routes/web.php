@@ -29,22 +29,9 @@ use App\Models\Question;
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/kuesioner', [HomeController::class, 'index']);
 Route::post('/respondent', [HomeController::class, 'store']);
-//KUESIONER
 Route::get('/kuesioner-add', [HomeController::class, 'create']);
-
-
-// Route::get('/layanan', [HomeController::class, 'layanan'])->name('layanan');
-// Route::get('/layanan/{service}/questions', [HomeController::class, 'layanan'])->name('layanan');
-// Route::get('/kuesioner/{service:questions}', [HomeController::class, 'kuesioner'])->name('kuesioner');
-// Route::get('/kuesioner/{{ $service->questions }}', function (Question $question) {
-//     return view('kuesioner');
-// });
-// Route::get('/kuesioner', [HomeController::class, 'services'])->name('services');
-// Route::post('/kuesioner', [HomeController::class, 'kuesioner_act'])->name('kuesioner-act');
-// Route::get('/tampil', [HomeController::class, 'tampil'])->name('tampil');
-// Route::post('/api/questions', [HomeController::class, 'questions'])->name('questions');
-// Route::post('/api/options', [HomeController::class, 'options'])->name('options');
-// });
+Route::post('/result', [HomeController::class, 'result']);
+//KUESIONER
 
 // //auth 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -95,7 +82,7 @@ Route::group(['middleware' => ['auth', 'role:admin|kepala dinas']], function () 
     Route::delete('/respondent-destroy/{id}', [RespondentController::class, 'destroy'])->middleware('role_or_permission:delete_option|admin');
 
     //RESULT(Laporan)
-    Route::get('/result', [ResultController::class, 'index']);
+    Route::get('/resultadmin', [ResultController::class, 'index']);
 
     //PROFIL 
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');

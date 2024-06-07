@@ -127,49 +127,4 @@ class LoginController extends Controller
 
         return redirect('/')->with('success', 'Anda berhasil logout!');
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    // if (Auth::attempt($infologin)) {
-    //     echo "Anda berhasil login!";
-    //     exit();
-    // } else {
-    //     return redirect('')->withErrors("password salah")->withInput();
-    // }
-
-
-
-
-    //     public function authenticate(Request $request): RedirectResponse
-    //     {
-    //         $credentials = $request->validate([
-    //             'email' => ['required', 'email:dns'],
-    //             'password' => ['required', 'password'],
-    //         ]);
-    //         if (Auth::attempt($credentials)) {
-    //             $request->session()->regenerate();
-    //             return redirect('/dashboard')->with('loginsuccess', 'Anda berhasil login!');
-    //         }
-
-    //         return back()->with('loginError', 'Login failed');
-    //     }
-
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => ['required', 'password'],
-    //     ]);
-    // }
-
-    // public function logout(Request $request)
 }

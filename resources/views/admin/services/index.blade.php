@@ -3,9 +3,7 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <div class="row mb-2 ">
-                <div class="col-sm-6"></div>
-            </div>
+            <div class="row mb-2 "></div>
             <div class="card">
                 <div class="card-header py-3 d-flex">
                     <h6 class="m-0 font-weight-bold text-primary">
@@ -80,6 +78,5 @@
                 </div>
             </div>
         </div>
-        <!-- Content Row -->
     </div>
 @endsection

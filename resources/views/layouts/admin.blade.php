@@ -117,7 +117,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('result') ? 'active' : '' }}" href='/result'>
+                            <a class="nav-link {{ Request::is('result') ? 'active' : '' }}" href='/resultadmin'>
                                 <i class="bi bi-journals"></i>
                                 <p>Laporan Hasil Survei</p>
                             </a>
@@ -131,11 +131,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <form onclick="return confirm('Yakin Anda Ingin Keluar ? ')" class="d-inline"
-                                action="/logout" method="POST">
+                            <form action="/logout" method="POST" onclick="return confirm('Yakin Anda Ingin Keluar ? ')"
+                                class="d-inline">
                                 @csrf
                                 <button type="submit"
-                                    class="nav-link bg-dark px-3 border-0 {{ Request::is('logout') ? 'active' : '' }}"><i
+                                    class="nav-link col-12 bg-dark px-3 border-0 text-start  {{ Request::is('logout') ? 'active' : '' }}"><i
                                         class="bi bi-box-arrow-right"></i>Logout</button>
                             </form>
                         </li>

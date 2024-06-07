@@ -9,7 +9,7 @@ class Question extends Model
 {
     use HasFactory;
     protected $table = 'questions';
-    // protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
     protected $fillable = ['service_id', 'question_text'];
     protected $primaryKey = 'id';
 
@@ -25,7 +25,10 @@ class Question extends Model
         return $this->hasMany(Option::class);
     }
 
-
+    public function result()
+    {
+        return $this->hasMany(Result::class);
+    }
 
 
     // public function Service()
@@ -41,8 +44,5 @@ class Question extends Model
     //     return $this->hasMany(Option::class);
     // }
 
-    // public function questionResult()
-    // {
-    //     return $this->belongsTo(Result::class);
-    // }
+
 }

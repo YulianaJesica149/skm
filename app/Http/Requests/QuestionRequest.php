@@ -22,21 +22,21 @@ class QuestionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_service' => 'required',
+            'service_id' => 'required',
             'question_text' => 'required'
         ];
     }
     public function attributes(): array
     {
         return [
-            'id_service' => 'Jenis Pelayanan',
+            'service_id' => 'Jenis Pelayanan',
             'question_text' => 'Pertanyaan',
         ];
     }
     public function messages()
     {
         return [
-            'id_service.required' => 'Jenis Pelayanan wajib diisi',
+            'service_id.required' => 'Jenis Pelayanan wajib diisi',
             'question_text' => 'Pertanyaan wajib diisi'
         ];
     }

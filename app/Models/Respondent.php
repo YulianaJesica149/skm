@@ -21,8 +21,13 @@ class Respondent extends Model
         "pekerjaan",
     ];
 
-    public function Result()
+    // public function result()
+    // {
+    //     return $this->belongsTo(Result::class);
+    // }
+
+    public function result()
     {
-        return $this->belongsTo(Result::class);
+        return $this->hasMany(Result::class);
     }
 }

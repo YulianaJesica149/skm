@@ -2,29 +2,40 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Question;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Result extends Model
 {
     use HasFactory;
     protected $table = 'result_admin';
 
-    // protected $guarded = ['id', 'created_at', 'updated_at'];
-
-    protected $fillable = ['id', 'saran'];
-    public function resultRespondent()
+    protected $primaryKey = 'id';
+    protected $fillable = ['repondent_id', 'service_id', 'question_id', 'option_id', 'saran'];
+    public function respondent()
     {
-        return $this->hasMany(Respondent::class);
+        return $this->belongsTo(Respondent::class);
     }
 
-    public function resultService()
+    public function service()
     {
-        return $this->hasMany(Service::class);
+        return $this->belongsTo(Service::class);
     }
-    public function resultOption()
+
+    public function question()
     {
-        return $this->belongsToMany(Option::class)->withPivot(['option_id', 'question_id', 'saran', 'points']);
+        return $this->belongsTo(Question::class);
     }
+
+    public function option()
+    {
+        return $this->belongsTo(Option::class);
+    }
+
+
+    // public function question()
+    // {
+    //     return $this->belongsToMany(Question::class)->withPivot(['option_id', 'points']);
+    // }
 }

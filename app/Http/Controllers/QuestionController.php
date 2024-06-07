@@ -18,9 +18,6 @@ class QuestionController extends Controller
         return view("admin.questions.index", compact("questions"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $services = Service::all()->pluck('service_text', 'id');
@@ -30,7 +27,7 @@ class QuestionController extends Controller
 
     public function store(QuestionRequest $request): RedirectResponse
     {
-        $question = Question::create($request->validated());
+        Question::create($request->validated());
 
         return redirect('/question')->with([
             Session::flash('status', 'Berhasil'),
@@ -43,7 +40,7 @@ class QuestionController extends Controller
     {
 
         $question = Question::with('Service')->findOrFail($id);
-        $services = Service::all()->pluck('service_text', 'id_service');
+        $services = Service::all()->pluck('service_text', 'id');
         // $services = Service::where('id', '!=', $question->service_id)->get(['id', 'service_text']);
         return view('admin.questions.edit', compact('question', 'services'));
     }

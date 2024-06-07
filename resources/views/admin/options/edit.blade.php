@@ -26,12 +26,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="question">Pertanyaan</label>
-                            <select class="form-select" id="floatingSelectGrid" name="question_id" id="question">
-                                {{-- <option value="{{ $option->question->question_text }}">
-                                    {{ $option->question->question_text }}</option>
-                                @foreach ($question as $data)
-                                    <option value="{{ $data->id }}">{{ $data->question_text }}</option>
-                                @endforeach --}}
+                            <select class="form-select" name="question_id" id="question">
                                 @foreach ($questions as $id => $question)
                                     <option {{ $id == $option->question->id ? 'selected' : null }}
                                         value="{{ $id }}">{{ $question }}</option>

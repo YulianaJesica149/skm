@@ -35,10 +35,6 @@ class ServiceController extends Controller
         ]);
     }
 
-    // public function show(Service $services)
-    // {
-    //     return view("admin.services.show", compact("services"));
-    // }
 
     public function edit(Service $service, $id)
     {

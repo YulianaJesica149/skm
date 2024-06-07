@@ -13,25 +13,16 @@ class Option extends Model
     protected $table = 'options';
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $fillable = ['question_id', 'question_text'];
+    protected $fillable = ['question_id', 'option_text', 'points'];
     protected $primaryKey = 'id';
 
     public function question()
     {
         return $this->belongsTo(Question::class);
-        // return $this->belongsToMany(Question::class, 'option', 'question_id', 'option_id');
     }
 
-
-
-
-    
-    // public function option()
-    // {
-    //     return $this->belongsToMany(Question::class);
-    // }
-    // public function optionResult()
-    // {
-    //     return $this->belongsTo(Result::class);
-    // }
+    public function result()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

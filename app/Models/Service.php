@@ -9,7 +9,7 @@ class Service extends Model
 {
     use HasFactory;
     protected $table = 'services';
-    // protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
     protected $fillable = ['service_text'];
     protected $primaryKey = 'id';
 
@@ -18,20 +18,8 @@ class Service extends Model
         return $this->hasMany(Question::class);
     }
 
-
-
-
-
-
-
-
-    
-    // public function serviceQuestion()
-    // {
-    //     return $this->hasMany(Question::class);
-    // }
-    // public function serviceResult()
-    // {
-    //     return $this->belongsTo(Result::class);
-    // }
+    public function result()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

@@ -6,13 +6,8 @@
             <div class="container-fluid">
                 <div class="row mb-2 ">
                     <div class="col-sm-6">
-                        {{-- <h3 class="m-0">Manajemen User</h3> --}}
                     </div><!-- /.col -->
                 </div>
-                <!-- Page Heading -->
-
-
-                <!-- Content Row -->
                 <div class="card">
                     <div class="card-header py-3 d-flex">
                         <h6 class="m-0 font-weight-bold text-primary">
@@ -38,7 +33,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover datatable datatable-option"
-                                cellspacing="0" width="100%" >
+                                cellspacing="0" width="100%" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>No</th>
