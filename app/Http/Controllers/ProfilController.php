@@ -38,36 +38,3 @@ class ProfilController extends Controller
         return view("profil.index");
     }
 }
-
-
-
-
-
-
-    
-            // $user = User::select('id', 'password')->whereId($id)->firstOrfail();
-            //cek password lama
-            // if (!Hash::check($request->old_password, $user->password)) {
-                // return back()->with('error', 'password salah');
-                // return back('')->with([
-                //     Session::flash('error', 'gagal'),
-                //     Session::flash('message', 'gagal Dihapus!')
-                // ]);
-                // return back()->with([
-                //     'message' => 'gagal updated !',
-                //     'alert-type' => 'info'
-                // ]);
-    // if ($request->new_password != $request->password_confirmation) {
-        //     return back()->with('error', 'password tidak sama');
-        //     return back('')->with([
-        //         Session::flash('error', 'gagal'),
-        //         Session::flash('message', 'gagal Dihapus gtu!')
-        //     ]);
-        //     return back()->with([
-        //         'message' => 'gagal updated pass baru !',
-        //         'alert-type' => 'info'
-        //     ]);
-        // }
-
-        // $user->update(['passsword' => Hash::make($request->new_pasword)]);
-        // return back()->with('status', 'Your password has been Updated');

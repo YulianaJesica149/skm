@@ -26,7 +26,7 @@
             <div class="col-md-7">
                 <h2 class="featurette-heading fw-normal lh-1">Selamat Datang <span class="text-body-secondary"></span></h2>
                 <p class="lead">Sistem SURVEI Kepuasan Masyarakat</p>
-                <a class="btn btn-success btn-lg fw-bold" href="/kuesioner" role="button">Isi Survei Klik Di Sini!</a>
+                <a class="btn btn-success btn-lg fw-bold" href="/questionnaire" role="button">Isi Survei Klik Di Sini!</a>
             </div>
             <div class="col-md-5">
                 <img src="img/Gambarluar_1.jpg" class="rounded float-end" alt="" width="400">

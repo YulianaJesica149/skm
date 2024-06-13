@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Result;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ResultController extends Controller
@@ -11,12 +10,7 @@ class ResultController extends Controller
 
     public function index()
     {
-        $results = Result::with('Option')->get();
-        return view('admin.results.index', compact('results'));
-    }
-    public function create(Result $result)
-    {
-        $result = Result::all();
-        return view("admin.results.create", compact("result"));
+        $results = Result::with(['respondent', 'service', 'question', 'option'])->get();
+        return view('admin.results.index', compact("results"));
     }
 }

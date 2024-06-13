@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Http\Controllers\RespondetsController;
-use Illuminate\Database\Eloquent\Casts\ArrayObject;
 
 class Respondent extends Model
 {
@@ -20,11 +17,6 @@ class Respondent extends Model
         "pendidikan",
         "pekerjaan",
     ];
-
-    // public function result()
-    // {
-    //     return $this->belongsTo(Result::class);
-    // }
 
     public function result()
     {

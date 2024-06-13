@@ -27,10 +27,9 @@ use App\Models\Question;
 
 //home
 Route::get('/', [HomeController::class, 'home']);
-Route::get('/kuesioner', [HomeController::class, 'index']);
+Route::get('/questionnaire', [HomeController::class, 'index']);
 Route::post('/respondent', [HomeController::class, 'store']);
-Route::get('/kuesioner-add', [HomeController::class, 'create']);
-Route::post('/result', [HomeController::class, 'result']);
+Route::post('/result', [HomeController::class, 'saveAnswers']);
 //KUESIONER
 
 // //auth 
@@ -82,7 +81,7 @@ Route::group(['middleware' => ['auth', 'role:admin|kepala dinas']], function () 
     Route::delete('/respondent-destroy/{id}', [RespondentController::class, 'destroy'])->middleware('role_or_permission:delete_option|admin');
 
     //RESULT(Laporan)
-    Route::get('/resultadmin', [ResultController::class, 'index']);
+    Route::get('/result', [ResultController::class, 'index']);
 
     //PROFIL 
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');

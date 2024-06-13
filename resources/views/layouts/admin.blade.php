@@ -79,8 +79,7 @@
             <div class="sidebar">
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" role="menu" data-accordion="false">
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href='/dashboard'>
                                 <i class="bi bi-house-door-fill"></i>
@@ -93,7 +92,8 @@
                                 <p>Manajemen User</p>
                             </a>
                         </li>
-                        <li class="nav-item menu-open">
+                        {{-- <li class="nav-item menu-open" data-widget="treeview"> --}}
+                        <li class="nav-item" data-widget="treeview">
                             <a href="#" class="nav-link">
                                 <i class="bi bi-journal"></i>
                                 <p>Survei<i class="right fas fa-angle-left"></i></p>
@@ -117,7 +117,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('result') ? 'active' : '' }}" href='/resultadmin'>
+                            <a class="nav-link {{ Request::is('result') ? 'active' : '' }}" href='/result'>
                                 <i class="bi bi-journals"></i>
                                 <p>Laporan Hasil Survei</p>
                             </a>

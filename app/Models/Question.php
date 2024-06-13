@@ -29,20 +29,4 @@ class Question extends Model
     {
         return $this->hasMany(Result::class);
     }
-
-
-    // public function Service()
-    // {
-    //     return $this->belongsTo(Service::class);
-    // }
-    // public function questionOption()
-    // {
-    //     return $this->belongsToMany(Option::class, 'question_option', 'question_id', 'option_id');
-    // }
-    // public function Kuesioner()
-    // {
-    //     return $this->hasMany(Option::class);
-    // }
-
-
 }

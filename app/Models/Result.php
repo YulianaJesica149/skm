@@ -12,7 +12,7 @@ class Result extends Model
     protected $table = 'result_admin';
 
     protected $primaryKey = 'id';
-    protected $fillable = ['repondent_id', 'service_id', 'question_id', 'option_id', 'saran'];
+    protected $fillable = ['respondent_id', 'service_id', 'question_id', 'option_id', 'saran'];
     public function respondent()
     {
         return $this->belongsTo(Respondent::class);
@@ -32,10 +32,4 @@ class Result extends Model
     {
         return $this->belongsTo(Option::class);
     }
-
-
-    // public function question()
-    // {
-    //     return $this->belongsToMany(Question::class)->withPivot(['option_id', 'points']);
-    // }
 }

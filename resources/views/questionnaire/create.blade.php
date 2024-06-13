@@ -24,16 +24,19 @@
                         <form method="POST" action="/result">
                             @csrf
                             <div class="card-body">
+                                <input type="hidden" name="respondent_id" value="{{ $respondent->id }}">
+                                <input type="hidden" name="service_id" value="{{ $service_id }}">
                                 @foreach ($questions as $question)
                                     <div class="card @if (!$loop->last) mb-3 @endif">
                                         <div class="card-header">{{ $question->question_text }}</div>
 
                                         <div class="card-body">
-                                            <input type="hidden" name="questions[{{ $question->id }}]" value="">
+                                            <input type="hidden" name="questions[{{ $question->id }}]"
+                                                value="questions">
                                             @foreach ($question->options as $option)
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="questions[{{ $question->id }}]"
+                                                        name="answers[{{ $question->id }}]"
                                                         id="option-{{ $option->id }}"
                                                         value="{{ $option->id }}"@if (old("questions.$question->id") == $option->id) checked @endif>
                                                     <label class="form-check-label" for="option-{{ $option->id }}">

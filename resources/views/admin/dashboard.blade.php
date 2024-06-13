@@ -5,11 +5,9 @@
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2 ">
-                    <div class="col-sm-6">
-                        <h3 class="m-0">Dashboard</h3>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
+                <div class="col-sm-6">
+                    <h3 class="m-0">Dashboard</h3>
+                </div>
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->

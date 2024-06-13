@@ -36,10 +36,10 @@
                                     <tr data-entry-id="{{ $result->id }}">
 
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $result->respondents->id }}</td>
-                                        <td>{{ $result->service->id }}</td>
-                                        <td>{{ $result->question->id }}</td>
-                                        <td>{{ $result->option->id }}</td>
+                                        <td>{{ $result->respondent_id }}</td>
+                                        <td>{{ $result->service_id }}</td>
+                                        <td>{{ $result->question_id }}</td>
+                                        <td>{{ $result->option_id }}</td>
                                         <td>{{ $result->saran }}</td>
                                     </tr>
                                 @empty
