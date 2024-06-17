@@ -11,7 +11,6 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RespondentController;
-use App\Models\Question;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +28,7 @@ use App\Models\Question;
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/questionnaire', [HomeController::class, 'index']);
 Route::post('/respondent', [HomeController::class, 'store']);
-Route::post('/result', [HomeController::class, 'saveAnswers']);
+
 //KUESIONER
 
 // //auth 
@@ -82,11 +81,11 @@ Route::group(['middleware' => ['auth', 'role:admin|kepala dinas']], function () 
 
     //RESULT(Laporan)
     Route::get('/result', [ResultController::class, 'index']);
+    Route::post('/result', [HomeController::class, 'saveAnswers']);
+    Route::get('/result-export', [ResultController::class, 'export']);
 
     //PROFIL 
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
-
-    // Route::get('/profil-edit/{id}', [ProfilController::class, 'edit'])->name('profil.edit');
-    // // Route::post('/profil-change-password/{id}', [ProfilController::class, 'profil_change_password'])->name('profil-change-password');
-    // Route::post('/update-password', [ProfilController::class, 'update_password'])->name('update.password');
+    Route::get('/profil-change-password/{id}', [ProfilController::class, 'edit'])->name('edit.password');
+    Route::post('/update-password/{id}', [ProfilController::class, 'update_password'])->name('update.password');
 });

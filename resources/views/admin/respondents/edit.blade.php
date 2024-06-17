@@ -3,15 +3,7 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <div class="row mb-2 ">
-                <div class="col-sm-6">
-                    {{-- <h3 class="m-0">Manajemen User</h3> --}}
-                </div><!-- /.col -->
-            </div>
-            <!-- Page Heading -->
-
-
-            <!-- Content Row -->
+            <div class="row mb-2 "></div>
             <div class="card">
                 <div class="card-header py-3 d-flex">
                     <h6 class="m-0 font-weight-bold text-primary">
@@ -96,11 +88,12 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <div class="d-grid justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
                     </form>
                 </div>
             </div>
-            <!-- Content Row -->
         </div>
     </div>
 @endsection

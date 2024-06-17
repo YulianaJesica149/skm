@@ -8,7 +8,7 @@
             <!-- /.login-logo -->
             <div class="card card-outline card-success">
                 <div class="card-header text-center">
-                    <a href="/login" class="h3"><b>Forget Password</b></a>
+                    <a href="/login" class="h3"><b>Lupa Kata Sandi</b></a>
                 </div>
                 <div class="card-body">
                     <p class="login-box-msg">Masukan Email Yang Sudah Terdaftar </p>
@@ -26,7 +26,7 @@
                             <small class="text text-danger"> {{ $message }}</small>
                         @enderror
                         <div class="col-12 mt-3">
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                         </div>
                     </form>
                 </div>

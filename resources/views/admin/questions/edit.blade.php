@@ -9,9 +9,6 @@
                     <h6 class="m-0 font-weight-bold text-primary">
                         Ubah Pertanyaan
                     </h6>
-                    <div class="ml-auto">
-                        <a href="/question"class="btn btn-primary btn-sm shadow-sm">Kembali</a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <form action="/question-update/{{ $question->id }}" method="POST">
@@ -36,7 +33,10 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <a href="/question" class="btn btn-primary">Kembali</a>
+                        </div>
                     </form>
                 </div>
             </div>

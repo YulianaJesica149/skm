@@ -37,7 +37,7 @@ class QuestionRequest extends FormRequest
     {
         return [
             'service_id.required' => 'Jenis Pelayanan wajib diisi',
-            'question_text' => 'Pertanyaan wajib diisi'
+            'question_text.required' => 'Pertanyaan wajib diisi'
         ];
     }
 }

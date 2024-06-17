@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav  ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Masuk</a>
                     </li>
                 </ul>
             </div>

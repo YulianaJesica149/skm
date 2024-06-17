@@ -23,45 +23,44 @@
                     <div class="card-body">
                         <form method="POST" action="/result">
                             @csrf
-                            <div class="card-body">
-                                <input type="hidden" name="respondent_id" value="{{ $respondent->id }}">
-                                <input type="hidden" name="service_id" value="{{ $service_id }}">
-                                @foreach ($questions as $question)
-                                    <div class="card @if (!$loop->last) mb-3 @endif">
-                                        <div class="card-header">{{ $question->question_text }}</div>
-
-                                        <div class="card-body">
-                                            <input type="hidden" name="questions[{{ $question->id }}]"
-                                                value="questions">
-                                            @foreach ($question->options as $option)
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="answers[{{ $question->id }}]"
-                                                        id="option-{{ $option->id }}"
-                                                        value="{{ $option->id }}"@if (old("questions.$question->id") == $option->id) checked @endif>
-                                                    <label class="form-check-label" for="option-{{ $option->id }}">
-                                                        {{ $option->option_text }}
-                                                    </label>
-                                                </div>
-                                            @endforeach
-
-                                            @if ($errors->has("questions.$question->id"))
-                                                <span style="margin-top: .25rem; font-size: 80%; color: #e3342f;"
-                                                    role="alert">
-                                                    <strong>{{ $errors->first("questions.$question->id") }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
+                            <input type="hidden" name="respondent_id" value="{{ $respondent->id }}">
+                            <input type="hidden" name="service_id" value="{{ $service_id }}">
+                            @foreach ($questions as $question)
+                                {{-- <div class="card @if (!$loop->last) mb-3 @endif"> --}}
+                                <div class="card mb-3">
+                                    <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}
                                     </div>
-                                @endforeach
 
-                                <div class="form-floating mt-4">
-                                    <textarea class="form-control" placeholder="Jawaban Anda" id="saran" name="saran" required></textarea><label for="saran">Masukan Saran Anda</label>
-                                </div>
+                                    <div class="card-body">
+                                        <input type="hidden" name="questions[{{ $question->id }}]" value="questions">
+                                        @foreach ($question->options as $option)
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    name="answers[{{ $question->id }}]" id="option-{{ $option->id }}"
+                                                    value="{{ $option->id }}" required
+                                                    @if (old("questions.$question->id") == $option->id) checked @endif>
+                                                <label class="form-check-label" for="option-{{ $option->id }}">
+                                                    {{ $option->option_text }}
+                                                </label>
+                                            </div>
+                                        @endforeach
 
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                                    <button class="btn btn-primary" type="submit" value="submit">Simpan</button>
+                                        @if ($errors->has("questions.$question->id"))
+                                            <span style="margin-top: .25rem; font-size: 80%; color: #e3342f;"
+                                                role="alert">
+                                                <strong>{{ $errors->first("questions.$question->id") }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
                                 </div>
+                            @endforeach
+
+                            <div class="form-floating mt-4">
+                                <textarea class="form-control" placeholder="Jawaban Anda" id="saran" name="saran" required></textarea><label for="saran">Masukan Saran Anda</label>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                                <button class="btn btn-primary" type="submit" value="submit">Simpan</button>
                             </div>
                         </form>
                     </div>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
@@ -13,28 +15,31 @@ class ProfilController extends Controller
         return view('profil.index');
     }
 
-    public function edit(User $user, $id)
+
+    public function edit($id)
     {
+
         $user = User::select('id', 'password')->whereId($id)->firstOrfail();
         return view('profil.edit');
     }
-    public function update_password(Request $request, User $user)
+
+    public function update_password(Request $request, $id, User $user)
     {
         $request->validate([
-            'old_password' => 'required',
-            'password' => 'required|min:6|confirm',
+            'current_password' => 'required|min:6',
+            'new_password' => 'required|min:6|confirmed',
+            'new_password_confirmation' => 'required|min:6',
 
         ]);
+        $user = User::select('id', 'password')->whereId($id)->firstOrfail();
+        if (Hash::check($request->current_password, $user->password)) {
+            $user->update([
+                'password' => Hash::make($request->new_password)
+            ]);
 
-        if (!Hash::check($request->old_password, $user->password)) {
-            return back()->with('message', 'Old password not match with your current password');
+            return redirect("/profil")->with('success', 'Password berhasil diubah');
+        } else {
+            return back()->with('gagal', '<small class="text-danger">password saat ini salah</small>');
         }
-        if ($request->new_password != $request->password_confirmation) {
-            return back()->with('message', 'new password  and confirmation not match');
-        }
-        $user->update([
-            'password' => Hash::make($request->new_password)
-        ]);
-        return view("profil.index");
     }
 }

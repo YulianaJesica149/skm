@@ -83,13 +83,13 @@
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href='/dashboard'>
                                 <i class="bi bi-house-door-fill"></i>
-                                <p> Dashboard</p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('respondent') ? 'active' : '' }}" href='/respondent'>
                                 <i class="bi bi-people-fill"></i>
-                                <p>Manajemen User</p>
+                                <p>Manajemen Responden</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item menu-open" data-widget="treeview"> --}}
@@ -136,7 +136,7 @@
                                 @csrf
                                 <button type="submit"
                                     class="nav-link col-12 bg-dark px-3 border-0 text-start  {{ Request::is('logout') ? 'active' : '' }}"><i
-                                        class="bi bi-box-arrow-right"></i>Logout</button>
+                                        class="bi bi-box-arrow-right"></i>Keluar</button>
                             </form>
                         </li>
                     </ul>

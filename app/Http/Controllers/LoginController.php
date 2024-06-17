@@ -53,13 +53,13 @@ class LoginController extends Controller
         Mail::to($request->email)->send(new ResetPasswordMail($token));
 
 
-        return redirect('/forgot-password')->with('success', 'Kami telah mengirimkan link reset password ke email anda');
+        return redirect('/login')->with('success', 'Kami telah mengirimkan tautan atur ulang kata sandi ke email anda');
     }
 
     public function proses_validasi_forgot_password(Request $request)
     {
         $customMessage = [
-            'password.required' => 'Password tidak boleh kosong',
+            'password.required' => 'Kata Sandi tidak boleh kosong',
 
         ];
         $request->validate([
@@ -81,7 +81,7 @@ class LoginController extends Controller
 
         $token->delete();
 
-        return redirect('/login')->with('success', 'Password berhasil direset');
+        return redirect('/login')->with('success', 'Kata Sandi berhasil direset');
     }
 
     public function validasi_forgot_password(Request $request, $token)
@@ -125,6 +125,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('success', 'Anda berhasil logout!');
+        return redirect('/')->with('success', 'Anda berhasil keluar!');
     }
 }

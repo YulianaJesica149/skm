@@ -22,9 +22,10 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="/service" class="btn btn-primary">Kembali</a>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <a href="/service" class="btn btn-primary">Kembali</a>
+                        </div>
                     </form>
                 </div>
             </div>

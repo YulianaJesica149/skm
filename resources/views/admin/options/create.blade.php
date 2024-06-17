@@ -3,23 +3,12 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <div class="row mb-2 ">
-                <div class="col-sm-6">
-                    {{-- <h3 class="m-0">Manajemen User</h3> --}}
-                </div><!-- /.col -->
-            </div>
-            <!-- Page Heading -->
-
-
-            <!-- Content Row -->
+            <div class="row mb-2 "></div>
             <div class="card">
                 <div class="card-header py-3 d-flex">
                     <h6 class="m-0 font-weight-bold text-primary">
                         Tambah Pilihan
                     </h6>
-                    <div class="ml-auto">
-                        <a href="/option"class="btn btn-primary btn-sm shadow-sm">Kembali</a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <form action="/option" method="POST">
@@ -49,11 +38,13 @@
                         @error('points')
                             <small class="text text-danger">{{ $message }}</small>
                         @enderror
-                        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <a href="/option" class="btn btn-primary">Kembali</a>
+                        </div>
                     </form>
                 </div>
             </div>
-            <!-- Content Row -->
         </div>
     </div>
 @endsection
