@@ -7,7 +7,7 @@
         <div class="login-box">
             <div class="card card-outline card-success">
                 <div class="card-header text-center">
-                    <h3><b>Selamat Datang</b></h3>
+                    <h3><b>Welcome</b></h3>
                 </div>
                 <div class="card-body">
                     <form action="/login" method="post">
@@ -27,7 +27,7 @@
                         @enderror
                         <div class="input-group mb-3">
                             <input type="password" name= "password" id="password"
-                                class="form-control  @error('password') is-invalid @enderror" placeholder="Kata Sandi">
+                                class="form-control  @error('password') is-invalid @enderror" placeholder="Password">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -38,12 +38,12 @@
                             <small class="text text-danger"> {{ $message }}</small>
                         @enderror
                         <div class="col-12 mb-3">
-                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
                     </form>
 
                     <p class="mb-2">
-                        <a href="{{ route('forgot-password') }}">Lupa Kata Sandi</a>
+                        <a href="{{ route('forgot-password') }}">forget password</a>
                     </p>
                 </div>
             </div>

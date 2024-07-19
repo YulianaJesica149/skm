@@ -5,16 +5,19 @@
         <div class="container">
             <a class="navbar-brand fw-bold " href="/">
                 <img src="img/LogoDinkes.png" alt="" width="25" height="25" class="d-inline-block align-text-top">
-                SURVEI KEPUASAN MASYARAKAT
+                SKM DINKES KALTIM
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  ms-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Masuk</a>
+                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login
+                            {{-- <i class="bi bi-arrow-right-short"></i> --}}
+                        </a>
+
                     </li>
                 </ul>
             </div>

@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
 </head>
 
-<body>
+<body class=" sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -59,7 +59,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link active">Selamat Datang, {{ auth()->user()->name }}</a>
+                    <a class="nav-link active">Welcome Back, {{ auth()->user()->name }}</a>
 
                 </li>
 
@@ -72,7 +72,7 @@
             <a href="{{ asset('/index3.html') }}" class="brand-link">
                 <img src="{{ asset('/img/LogoDinkes.png') }}" alt="Logo Dinkes"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text text-bold font-weight-light ">SKM</span>
+                <span class="brand-text font-weight-bold ">SKM DINKES KALTIM</span>
             </a>
 
             <!-- Sidebar -->
@@ -92,8 +92,8 @@
                                 <p>Manajemen Responden</p>
                             </a>
                         </li>
-                        {{-- <li class="nav-item menu-open" data-widget="treeview"> --}}
-                        <li class="nav-item" data-widget="treeview">
+                        <li class="nav-item menu-open" data-widget="treeview">
+                            {{-- <li class="nav-item" data-widget="treeview"> --}}
                             <a href="#" class="nav-link">
                                 <i class="bi bi-journal"></i>
                                 <p>Survei<i class="right fas fa-angle-left"></i></p>
@@ -123,11 +123,10 @@
                             </a>
                         </li>
                         <hr>
-                        <hr>
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('profil') ? 'active' : '' }}" href="/profil">
                                 <i class="bi bi-person-circle"></i>
-                                <p>Profil </p>
+                                <p>Profil</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -136,7 +135,9 @@
                                 @csrf
                                 <button type="submit"
                                     class="nav-link col-12 bg-dark px-3 border-0 text-start  {{ Request::is('logout') ? 'active' : '' }}"><i
-                                        class="bi bi-box-arrow-right"></i>Keluar</button>
+                                        class="bi bi-box-arrow-right"></i>
+                                    <p>Logout</p>
+                                </button>
                             </form>
                         </li>
                     </ul>

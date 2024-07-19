@@ -28,6 +28,7 @@ use App\Http\Controllers\RespondentController;
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/questionnaire', [HomeController::class, 'index']);
 Route::post('/respondent', [HomeController::class, 'store']);
+Route::post('/result', [HomeController::class, 'saveAnswers']);
 
 //KUESIONER
 
@@ -75,13 +76,13 @@ Route::group(['middleware' => ['auth', 'role:admin|kepala dinas']], function () 
 
     //RESPONDENT
     Route::get('/respondent', [RespondentController::class, 'index']);
+    Route::get('/respondent-export', [RespondentController::class, 'export']);
     Route::get('/respondent-edit/{id}', [RespondentController::class, 'edit'])->middleware('role_or_permission:edit_respondent|admin');
     Route::post('/respondent-update/{id}', [RespondentController::class, 'update'])->middleware('role:admin');
     Route::delete('/respondent-destroy/{id}', [RespondentController::class, 'destroy'])->middleware('role_or_permission:delete_option|admin');
 
     //RESULT(Laporan)
     Route::get('/result', [ResultController::class, 'index']);
-    Route::post('/result', [HomeController::class, 'saveAnswers']);
     Route::get('/result-export', [ResultController::class, 'export']);
 
     //PROFIL 

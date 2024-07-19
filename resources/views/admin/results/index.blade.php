@@ -11,11 +11,9 @@
                         Laporan Hasil Survei
                     </h6>
                     <div class="ml-auto">
-                        <a href="/result-export" class="btn btn-primary">
-                            <span class="icon text-white-50">
-                                <i class="fa fa-plus"></i>
-                            </span>
-                            <span class="text">Export Data</span>
+                        <a href="/result-export" class="btn btn-success">
+                            <span class="icon"> <i class="bi bi-printer"></i></span>
+                            <span class="text">Cetak</span>
                         </a>
                     </div>
                 </div>

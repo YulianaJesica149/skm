@@ -81,7 +81,7 @@ class LoginController extends Controller
 
         $token->delete();
 
-        return redirect('/login')->with('success', 'Kata Sandi berhasil direset');
+        return redirect('/login')->with('success', 'Kata Sandi berhasil diatur ulang');
     }
 
     public function validasi_forgot_password(Request $request, $token)
@@ -112,7 +112,7 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('failed', 'Login failed');
+        return back()->with('failed', 'Login gagal');
     }
 
 

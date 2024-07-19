@@ -62,6 +62,6 @@ class HomeController extends Controller
             ]);
         }
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Terimakasih Telah Mengisi Survei');
     }
 }

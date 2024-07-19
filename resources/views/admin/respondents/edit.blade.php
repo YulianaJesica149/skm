@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="d-grid justify-content-md-end">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>

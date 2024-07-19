@@ -17,8 +17,8 @@ class DashboardController extends Controller
         $umur3 =  Respondent::where('umur', '>', 29)->where('umur', '<', 40)->get()->count();
         $umur4 = Respondent::where('umur',  '>', 39)->where('umur', '<', 50)->get()->count();
         $umur5 =  Respondent::where('umur', '>=', 50)->get()->count();
-        $pendidikanSd = Respondent::where('pendidikan', 'SD')->get()->count();
-        $pendidikanSmp = Respondent::where('pendidikan', 'SMP')->get()->count();
+        // $pendidikanSd = Respondent::where('pendidikan', 'SD')->get()->count();
+        // $pendidikanSmp = Respondent::where('pendidikan', 'SMP')->get()->count();
         $pendidikanSma = Respondent::where('pendidikan', 'SLTA/SEDERAJAT')->get()->count();
         $pendidikanD1 = Respondent::where('pendidikan', 'DI/DII')->get()->count();
         $pendidikanD3 = Respondent::where('pendidikan', 'DIII')->get()->count();
@@ -31,6 +31,6 @@ class DashboardController extends Controller
         $pekerjaanTn = Respondent::where('pekerjaan', 'Tenaga Medis')->get()->count();
         $pekerjaanPM = Respondent::where('pekerjaan', 'Pelajar/Mahasiswa')->get()->count();
         $pekerjaanLain = Respondent::where('pekerjaan', 'Lainnya')->get()->count();
-        return view("admin.dashboard", compact('laki', 'perempuan', 'umur', 'umur2', 'umur3', 'umur4', 'umur5', 'pendidikanSd', 'pendidikanSmp', 'pendidikanSma', 'pendidikanD1', 'pendidikanD3', 'pendidikanS1', 'pendidikanS2', 'pendidikanS3', 'pekerjaanPns', 'pekerjaanPs', 'pekerjaanWs', 'pekerjaanTn', 'pekerjaanPM', 'pekerjaanLain', 'totalRespondent'));
+        return view("admin.dashboard", compact('laki', 'perempuan', 'umur', 'umur2', 'umur3', 'umur4', 'umur5',  'pendidikanSma', 'pendidikanD1', 'pendidikanD3', 'pendidikanS1', 'pendidikanS2', 'pendidikanS3', 'pekerjaanPns', 'pekerjaanPs', 'pekerjaanWs', 'pekerjaanTn', 'pekerjaanPM', 'pekerjaanLain', 'totalRespondent'));
     }
 }

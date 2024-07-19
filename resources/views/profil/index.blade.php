@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="name">Nama</label>
+                        <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name"
                             value="{{ old('name', auth()->user()->name) }}" readonly>
                     </div>
@@ -22,7 +22,7 @@
                             value="{{ old('email', auth()->user()->email) }}" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="password">Kata Sandi</label>
+                        <label for="password">Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="password" name="password"
                                 value="{{ old('password', auth()->user()->password) }}" readonly>

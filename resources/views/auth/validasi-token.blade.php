@@ -24,7 +24,7 @@
                             <small class="text text-danger"> {{ $message }}</small>
                         @enderror
                         <div class="col-12 mt-3">
-                            <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
                         </div>
                         <!-- /.col -->
                     </form>

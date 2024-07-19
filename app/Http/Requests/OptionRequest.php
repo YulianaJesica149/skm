@@ -39,7 +39,7 @@ class OptionRequest extends FormRequest
     public function messages()
     {
         return [
-            'question_id' => 'Pertanyaan wajib diisi',
+            'question_id.required' => 'Pertanyaan wajib diisi',
             'option_text.required' => 'Pilihan wajib diisi',
             'points.required' => 'Poin wajib diisi'
         ];

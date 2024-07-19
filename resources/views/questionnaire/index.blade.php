@@ -19,7 +19,7 @@
             <a class="navbar-brand fw-bold " href="/">
                 <img src="img/LogoDinkes.png" alt="" width="25" height="25"
                     class="d-inline-block align-text-top">
-                SURVEI KEPUASAN MASYARAKAT
+                SKM DINKES KALTIM
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -89,8 +89,8 @@
                                     </div>
                                     <select class="form-select" name="pendidikan" id="pendidikan" required>
                                         <option selected> ------ Pilih Pendidikan ------ </option>
-                                        <option value="SD">SD</option>
-                                        <option value="SMP">SMP</option>
+                                        {{-- <option value="SD">SD</option>
+                                        <option value="SMP">SMP</option> --}}
                                         <option value="SLTA/SEDERAJAT">SLTA/SEDERAJAT</option>
                                         <option value="DI/DII">DI/DII</option>
                                         <option value="DIII">DIII</option>
@@ -131,7 +131,7 @@
                         <label for="service" class="form-label">Jenis Layanan</label>
                         <div class="input-group @error('layanan') is-invalid @enderror">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="bi bi-mortarboard-fill"></i></span>
+                                <span class="input-group-text"><i class="bi bi-person-gear"></i></span>
                             </div>
                             <select class="form-select" id="service" name="service" required>
                                 <option value=""> ------ Pilih Jenis Layanan ------ </option>

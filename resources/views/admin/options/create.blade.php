@@ -40,7 +40,7 @@
                         @enderror
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="/option" class="btn btn-primary">Kembali</a>
+                            <a href="/option" class="btn btn-primary">Batal</a>
                         </div>
                     </form>
                 </div>

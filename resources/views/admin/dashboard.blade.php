@@ -1,16 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <div class="content-header">
-            <div class="container-fluid">
+            {{-- <div class="container-fluid">
                 <div class="col-sm-6">
                     <h3 class="m-0">Dashboard</h3>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div> --}}
         </div>
-        <!-- /.content-header -->
 
         <html>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -29,11 +27,10 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-info">
-                                <div class="inner">
+                                <div class="inner text-center">
                                     <h5>Total Responden</h5>
                                     <p class="card-text text-center">{{ $totalRespondent }} Orang </p>
                                 </div>
@@ -167,12 +164,11 @@
                         new Chart(pendidikan, {
                             type: 'pie',
                             data: {
-                                labels: ['SD', 'SMP', 'SLTA/SEDERAJAT', 'DI/DII', 'DIII', 'S1', 'S2', 'S3'],
+                                labels: ['SLTA/SEDERAJAT', 'DI/DII', 'DIII', 'S1', 'S2', 'S3'],
                                 datasets: [{
                                     label: 'pendidikan Respondent',
-                                    data: [{{ $pendidikanSd }}, {{ $pendidikanSmp }}, {{ $pendidikanSma }},
-                                        {{ $pendidikanD1 }}, {{ $pendidikanD3 }}, {{ $pendidikanS1 }},
-                                        {{ $pendidikanS2 }}, {{ $pendidikanS3 }}
+                                    data: [{{ $pendidikanSma }}, {{ $pendidikanD1 }}, {{ $pendidikanD3 }},
+                                        {{ $pendidikanS1 }}, {{ $pendidikanS2 }}, {{ $pendidikanS3 }}
                                     ],
                                     borderWidth: 1
                                 }]
@@ -204,11 +200,9 @@
                             }
                         });
                     </script>
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
     </div>
-    <!-- /.content -->
     </body>
 
     </html>

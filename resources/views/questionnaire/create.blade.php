@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                                <button class="btn btn-primary" type="submit" value="submit">Simpan</button>
+                                <button class="btn btn-primary" type="submit" value="submit">Submit</button>
                             </div>
                         </form>
                     </div>

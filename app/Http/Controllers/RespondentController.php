@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Respondent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Exports\RespondentsExport;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\RespondentRequest;
 
@@ -15,6 +18,10 @@ class RespondentController extends Controller
     {
         $respondents = Respondent::all();
         return view("admin.respondents.index", compact("respondents"));
+    }
+    public function export()
+    {
+        return Excel::download(new RespondentsExport, 'respondents-' . Carbon::now()->timestamp . '.xlsx');
     }
 
     public function create(Respondent $respondent)
